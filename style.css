@@ -46,8 +46,10 @@ body {
     transition: color 0.2s;
 }
 
-.nav-links a:hover {
-    color: #fff;
+.nav-links a:hover,
+.nav-links a.active {
+    color: #38bdf8;
+    font-weight: bold;
 }
 
 /* Tombol */
@@ -109,7 +111,7 @@ body {
     text-align: center;
 }
 
-.section h3 {
+.section h3, .section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #0f172a;
@@ -120,7 +122,7 @@ body {
     max-width: 100%;
 }
 
-/* Grid Kartu Jenis Ikan */
+/* Grid Kartu */
 .card-grid {
     display: flex;
     gap: 1rem;
@@ -136,12 +138,28 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     flex: 1;
     min-width: 200px;
-    max-width: 250px;
+    max-width: 230px;
     text-align: left;
 }
 
 .card h4 {
     color: #0284c7;
+    margin-bottom: 0.5rem;
+}
+
+/* Tambahan untuk Kartu Galeri */
+.gallery-card {
+    position: relative;
+}
+
+.gallery-badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0284c7;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
@@ -164,11 +182,12 @@ footer {
     background-color: #0f172a;
     color: #94a3b8;
     font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
 /* Modal Pop-up Login */
 .modal {
-    display: none; /* Sembunyikan secara default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;

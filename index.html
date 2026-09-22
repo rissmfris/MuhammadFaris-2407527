@@ -14,9 +14,10 @@
         <div class="nav-container">
             <h1 class="logo">CupangArt</h1>
             <nav class="nav-links">
-                <a href="#tentang">Tentang</a>
-                <a href="#jenis">Jenis</a>
-                <a href="#perawatan">Perawatan</a>
+                <a href="#beranda" onclick="showPage('beranda')" id="link-beranda" class="active">Beranda</a>
+                <a href="#galeri" onclick="showPage('galeri')" id="link-galeri">Galeri</a>
+                <a href="#tentang" onclick="showPage('beranda')">Tentang</a>
+                <a href="#perawatan" onclick="showPage('beranda')">Perawatan</a>
             </nav>
             <button id="btn-login" class="btn-primary">Login Email</button>
         </div>
@@ -24,49 +25,79 @@
 
     <!-- KONTEN UTAMA -->
     <main>
-        <!-- Bagian Hero / Banner -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Keindahan & Karisma Ikan Cupang</h2>
-                <p>Kenali lebih dekat pesona ikan hias air tawar yang memiliki warna dan sirip yang memukau.</p>
-                <a href="#tentang" class="btn-secondary">Pelajari Lebih Lanjut</a>
-            </div>
-        </section>
+        <!-- HALAMAN 1: BERANDA -->
+        <div id="page-beranda" class="page-content">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Keindahan & Karisma Ikan Cupang</h2>
+                    <p>Kenali lebih dekat pesona ikan hias air tawar yang memiliki warna dan sirip yang memukau.</p>
+                    <a href="#tentang" class="btn-secondary" onclick="showPage('beranda')">Pelajari Lebih Lanjut</a>
+                </div>
+            </section>
 
-        <!-- Bagian Tentang -->
-        <section id="tentang" class="section">
-            <h3>Tentang Ikan Cupang</h3>
-            <p>Ikan cupang (Betta sp.) adalah ikan air tawar dari daerah tropis yang populer dipelihara sebagai ikan hias. Ikan ini terkenal karena agresif dalam mempertahankan wilayahnya serta memiliki bentuk sirip yang anggun.</p>
-        </section>
+            <section id="tentang" class="section">
+                <h3>Tentang Ikan Cupang</h3>
+                <p>Ikan cupang (Betta sp.) adalah ikan air tawar dari daerah tropis yang populer dipelihara sebagai ikan hias. Ikan ini terkenal karena agresif dalam mempertahankan wilayahnya serta memiliki bentuk sirip yang anggun.</p>
+            </section>
 
-        <!-- Bagian Jenis-Jenis -->
-        <section id="jenis" class="section bg-light">
-            <h3>Jenis-Jenis Populer</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <h4>Halfmoon</h4>
-                    <p>Memiliki sirip ekor yang mekar lebar membentuk setengah lingkaran sempurna (180 derajat).</p>
-                </article>
-                <article class="card">
-                    <h4>Plakat</h4>
-                    <p>Cupang aduan tradisional dengan sirip yang pendek namun kuat dan tubuh yang kokoh.</p>
-                </article>
-                <article class="card">
-                    <h4>Crowntail</h4>
-                    <p>Dikenal dengan sebutan serit, siripnya menyerupai mahkota duri yang unik dan eksotis.</p>
-                </article>
-            </div>
-        </section>
+            <section id="jenis" class="section bg-light">
+                <h3>Jenis-Jenis Populer</h3>
+                <div class="card-grid">
+                    <article class="card">
+                        <h4>Halfmoon</h4>
+                        <p>Memiliki sirip ekor yang mekar lebar membentuk setengah lingkaran sempurna (180 derajat).</p>
+                    </article>
+                    <article class="card">
+                        <h4>Plakat</h4>
+                        <p>Cupang aduan tradisional dengan sirip yang pendek namun kuat dan tubuh yang kokoh.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Crowntail</h4>
+                        <p>Dikenal dengan sebutan serit, siripnya menyerupai mahkota duri yang unik dan eksotis.</p>
+                    </article>
+                </div>
+            </section>
 
-        <!-- Bagian Perawatan Sederhana -->
-        <section id="perawatan" class="section">
-            <h3>Tips Perawatan Dasar</h3>
-            <ul class="tips-list">
-                <li>Gunakan wadah/akuarium yang cukup luas agar ikan bisa bergerak bebas.</li>
-                <li>Ganti air secara berkala (2-3 hari sekali) untuk menjaga kebersihan.</li>
-                <li>Beri pakan berkualitas seperti pelet khusus cupang atau jentik nyamuk secukupnya.</li>
-            </ul>
-        </section>
+            <section id="perawatan" class="section">
+                <h3>Tips Perawatan Dasar</h3>
+                <ul class="tips-list">
+                    <li>Gunakan wadah/akuarium yang cukup luas agar ikan bisa bergerak bebas.</li>
+                    <li>Ganti air secara berkala (2-3 hari sekali) untuk menjaga kebersihan.</li>
+                    <li>Beri pakan berkualitas seperti pelet khusus cupang atau jentik nyamuk secukupnya.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- HALAMAN 2: GALERI (Tersembunyi secara default, muncul saat diklik) -->
+        <div id="page-galeri" class="page-content" style="display: none;">
+            <section class="section">
+                <h2>Galeri Ragam Cupang</h2>
+                <p>Kumpulan variasi warna dan corak menawan dari berbagai jenis ikan cupang hias.</p>
+                
+                <div class="card-grid" style="margin-top: 2rem;">
+                    <article class="card gallery-card">
+                        <div class="gallery-badge">Koi Nemo</div>
+                        <h4>Cupang Multicolor</h4>
+                        <p>Kombinasi warna cerah menyerupai ikan koi dengan gradasi oranye, hitam, dan putih.</p>
+                    </article>
+                    <article class="card gallery-card">
+                        <div class="gallery-badge">Solid</div>
+                        <h4>Cupang Super Black</h4>
+                        <p>Memiliki pigmen warna hitam pekat di seluruh tubuh dan siripnya secara merata.</p>
+                    </article>
+                    <article class="card gallery-card">
+                        <div class="gallery-badge">Metallic</div>
+                        <h4>Cupang Copper</h4>
+                        <p>Warna metalik menyerupai tembaga yang memantulkan cahaya saat terkena sinar lampu.</p>
+                    </article>
+                    <article class="card gallery-card">
+                        <div class="gallery-badge">Fancy</div>
+                        <h4>Cupang Giant</h4>
+                        <p>Jenis cupang berukuran lebih besar dari ukuran standar dengan corak tubuh yang unik.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- FOOTER -->
@@ -90,34 +121,52 @@
         </div>
     </div>
 
-    <!-- Skrip JavaScript Sederhana untuk Modal -->
+    <!-- Skrip JavaScript Sederhana untuk Navigasi Halaman & Modal -->
     <script>
+        // Fungsi untuk berpindah "halaman" dalam satu file HTML
+        function showPage(pageId) {
+            const pageBeranda = document.getElementById('page-beranda');
+            const pageGaleri = document.getElementById('page-galeri');
+            const linkBeranda = document.getElementById('link-beranda');
+            const linkGaleri = document.getElementById('link-galeri');
+
+            if (pageId === 'beranda') {
+                pageBeranda.style.display = 'block';
+                pageGaleri.style.display = 'none';
+                linkBeranda.classList.add('active');
+                linkGaleri.classList.remove('active');
+            } else if (pageId === 'galeri') {
+                pageBeranda.style.display = 'none';
+                pageGaleri.style.display = 'block';
+                linkGaleri.classList.add('active');
+                linkBeranda.classList.remove('active');
+                window.scrollTo(0, 0); // Gulir ke atas saat pindah halaman
+            }
+        }
+
+        // Script untuk Modal Login
         const modal = document.getElementById('login-modal');
         const btnLogin = document.getElementById('btn-login');
         const spanClose = document.getElementById('close-modal');
         const loginForm = document.getElementById('login-form');
         const loginMessage = document.getElementById('login-message');
 
-        // Buka modal saat tombol login diklik
         btnLogin.onclick = function() {
             modal.style.display = "flex";
             loginMessage.textContent = "";
             loginForm.reset();
         }
 
-        // Tutup modal saat tombol silang (x) diklik
         spanClose.onclick = function() {
             modal.style.display = "none";
         }
 
-        // Tutup modal jika pengguna klik di luar kotak modal
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
 
-        // Simulasi submit form login
         loginForm.onsubmit = function(e) {
             e.preventDefault();
             const emailVal = document.getElementById('email').value;
