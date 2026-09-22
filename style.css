@@ -4,7 +4,6 @@
   --text-main: #ffffff;
   --text-muted: #888888;
   --border-color: #333333;
-  --accent-color: #ffffff;
 }
 
 * {
@@ -22,7 +21,6 @@ body {
   color: var(--text-main);
 }
 
-/* --- STYLING AUTH (Register & Login) Sesuai PDF --- */
 .auth-body {
   display: flex;
   justify-content: center;
@@ -192,12 +190,6 @@ body {
   cursor: pointer;
   font-weight: 500;
   font-size: 0.9rem;
-}
-
-
-/* --- STYLING DASHBOARD / MY CARDS Sesuai PDF --- */
-.dashboard-body {
-  background-color: var(--bg-color);
 }
 
 .dashboard-container {
