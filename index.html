@@ -1,264 +1,132 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Cardify - Sesuai Referensi PDF</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-      .page-section { display: none; }
-      .page-section.active-page { display: flex; }
-      .demo-switcher {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #161616;
-        border: 1px solid #44b4ba;
-        padding: 10px 15px;
-        border-radius: 8px;
-        z-index: 9999;
-        display: flex;
-        gap: 10px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-      }
-      .demo-switcher button {
-        background: #44b4ba;
-        color: black;
-        border: none;
-        padding: 6px 12px;
-        border-radius: 4px;
-        font-weight: 600;
-        cursor: pointer;
-        font-size: 0.8rem;
-      }
-      .demo-switcher button:hover {
-        background: white;
-      }
-    </style>
-  </head>
-  <body class="auth-body">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Ikan Cupang</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Tombol Cepat untuk Berpindah Halaman Sesuai PDF -->
-    <div class="demo-switcher">
-      <span style="font-size: 0.8rem; align-self: center; color: #d1d3d4;">Pilih Halaman PDF:</span>
-      <button onclick="switchPage('register')">Register</button>
-      <button onclick="switchPage('login')">Login</button>
-      <button onclick="switchPage('dashboard')">My Cards</button>
-    </div>
-
-    <!-- ================= 1. HALAMAN REGISTER (Sesuai Daftar.pdf) ================= -->
-    <div id="page-register" class="page-section active-page auth-container" style="justify-content: center; align-items: center; width: 100%;">
-      <div class="auth-card" style="width: 100%; max-width: 450px;">
-        <div class="auth-logo">
-          <div class="logo-box">C</div>
-          <h2>Cardify</h2>
+    <!-- HEADER / NAVIGASI -->
+    <header class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">CupangArt</h1>
+            <nav class="nav-links">
+                <a href="#tentang">Tentang</a>
+                <a href="#jenis">Jenis</a>
+                <a href="#perawatan">Perawatan</a>
+            </nav>
+            <button id="btn-login" class="btn-primary">Login Email</button>
         </div>
-        <h3>Welcome to Cardify[cite: 1]</h3>
+    </header>
 
-        <form onsubmit="event.preventDefault(); switchPage('dashboard');">
-          <div class="input-group">
-            <label>Username</label>
-            <input type="text" placeholder="Insert Your Name" value="rezky4478" required />
-          </div>
-          <div class="input-group">
-            <label>Email</label>
-            <input type="email" placeholder="Email" value="rezky4478@gmail.com" required />
-          </div>
-          <div class="input-group">
-            <label>Password</label>
-            <input type="password" placeholder="Insert Password" value="********" required />
-          </div>
-          <div class="input-group">
-            <label>Confirm Password</label>
-            <input type="password" placeholder="Insert Password" value="********" required />
-          </div>
-
-          <div class="terms-group">
-            <input type="checkbox" id="terms" checked required />
-            <label for="terms">I agree to the Terms of Use and Privacy Policy[cite: 1]</label>
-          </div>
-
-          <button type="submit" class="btn-primary">Sign Up[cite: 1]</button>
-        </form>
-
-        <p class="auth-switch">Already have an account? <a href="#" onclick="switchPage('login')">Login</a>[cite: 1]</p>
-
-        <div class="divider">
-          <span>Or Sign Up With[cite: 1]</span>
-        </div>
-
-        <button class="btn-google">
-          <i data-feather="globe"></i> Google[cite: 1]
-        </button>
-      </div>
-    </div>
-
-    <!-- ================= 2. HALAMAN LOGIN (Sesuai Login.pdf & Login-1.pdf) ================= -->
-    <div id="page-login" class="page-section auth-container" style="justify-content: center; align-items: center; width: 100%;">
-      <div class="auth-card" style="width: 100%; max-width: 450px;">
-        <div class="auth-logo">
-          <div class="logo-box">C</div>
-          <h2>Cardify</h2>
-        </div>
-        <h3>Welcome back to Cardify[cite: 4]</h3>
-
-        <form onsubmit="event.preventDefault(); switchPage('dashboard');">
-          <div class="input-group">
-            <label>Username/email</label>
-            <input type="text" placeholder="Insert Your username or email" value="rezky4478@gmail.com" required />
-          </div>
-          <div class="input-group">
-            <label>Password</label>
-            <input type="password" placeholder="Insert Password" value="********" required />
-          </div>
-
-          <div class="forgot-password">
-            <a href="#">Forgot Password?[cite: 4]</a>
-          </div>
-
-          <button type="submit" class="btn-primary">Login[cite: 4]</button>
-        </form>
-
-        <p class="auth-switch">Didn’t have an account? <a href="#" onclick="switchPage('register')">Register</a>[cite: 4]</p>
-
-        <div class="divider">
-          <span>Or Login with[cite: 4]</span>
-        </div>
-
-        <button class="btn-google">
-          <i data-feather="globe"></i> Google[cite: 4]
-        </button>
-      </div>
-    </div>
-
-    <!-- ================= 3. HALAMAN MY CARDS / DASHBOARD (Sesuai My Card.pdf) ================= -->
-    <div id="page-dashboard" class="page-section dashboard-container" style="width: 100%; min-height: 100vh;">
-      <!-- Sidebar Sesuai PDF -->
-      <aside class="sidebar">
-        <div class="sidebar-brand">
-          <div class="logo-box-sm">C</div>
-          <h2>Cardify</h2>
-        </div>
-
-        <ul class="sidebar-menu">
-          <li><a href="#"><i data-feather="grid"></i> Dashboard[cite: 6]</a></li>
-          <li class="active"><a href="#"><i data-feather="layers"></i> My Cards[cite: 6]</a></li>
-          <li><a href="#"><i data-feather="plus-square"></i> Add Card Group[cite: 6]</a></li>
-          <li><a href="#"><i data-feather="bell"></i> What's New[cite: 6]</a></li>
-          <li><a href="#"><i data-feather="help-circle"></i> Help[cite: 6]</a></li>
-          <li><a href="#"><i data-feather="info"></i> About Us[cite: 6]</a></li>
-          <li><a href="#"><i data-feather="settings"></i> Settings[cite: 6]</a></li>
-        </ul>
-
-        <div class="sidebar-user">
-          <div class="user-avatar">RR</div>
-          <div class="user-info">
-            <strong>Rezky Rahmawan[cite: 6]</strong>
-            <span>Organization[cite: 6]</span>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main Content Sesuai PDF -->
-      <main class="main-content">
-        <header class="top-header">
-          <h2>My Cards[cite: 6]</h2>
-          <div class="category-filter">
-            <span>Category[cite: 6]</span>
-            <div class="badges">
-              <span class="badge active">Himapedia[cite: 6]</span>
-              <span class="badge">Badan Eksekutif Mahasiswa (BEM)[cite: 6]</span>
-              <span class="badge">PERSLIMA[cite: 6]</span>
-              <span class="badge">Dapur Seni Biru[cite: 6]</span>
-              <button class="btn-add-cat">+ Add Category[cite: 6]</button>
+    <!-- KONTEN UTAMA -->
+    <main>
+        <!-- Bagian Hero / Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Keindahan & Karisma Ikan Cupang</h2>
+                <p>Kenali lebih dekat pesona ikan hias air tawar yang memiliki warna dan sirip yang memukau.</p>
+                <a href="#tentang" class="btn-secondary">Pelajari Lebih Lanjut</a>
             </div>
-          </div>
-        </header>
+        </section>
 
-        <!-- Form Tambah Group Card Sesuai PDF -->
-        <section class="card-group-form-section">
-          <h3>Add Card Group[cite: 6]</h3>
-          <form class="card-group-form" onsubmit="event.preventDefault(); alert('Card Group Added!');">
-            <div class="form-row">
-              <div class="input-group">
-                <label>Group Card Name[cite: 6]</label>
-                <input type="text" value="Academic Schedule" />
-              </div>
-              <div class="input-group">
-                <label>Card Colors[cite: 6]</label>
-                <div class="color-input-wrapper">
-                  <span class="color-preview" style="background-color: #F8BD00;"></span>
-                  <input type="text" value="F8BD00" />
+        <!-- Bagian Tentang -->
+        <section id="tentang" class="section">
+            <h3>Tentang Ikan Cupang</h3>
+            <p>Ikan cupang (Betta sp.) adalah ikan air tawar dari daerah tropis yang populer dipelihara sebagai ikan hias. Ikan ini terkenal karena agresif dalam mempertahankan wilayahnya serta memiliki bentuk sirip yang anggun.</p>
+        </section>
+
+        <!-- Bagian Jenis-Jenis -->
+        <section id="jenis" class="section bg-light">
+            <h3>Jenis-Jenis Populer</h3>
+            <div class="card-grid">
+                <article class="card">
+                    <h4>Halfmoon</h4>
+                    <p>Memiliki sirip ekor yang mekar lebar membentuk setengah lingkaran sempurna (180 derajat).</p>
+                </article>
+                <article class="card">
+                    <h4>Plakat</h4>
+                    <p>Cupang aduan tradisional dengan sirip yang pendek namun kuat dan tubuh yang kokoh.</p>
+                </article>
+                <article class="card">
+                    <h4>Crowntail</h4>
+                    <p>Dikenal dengan sebutan serit, siripnya menyerupai mahkota duri yang unik dan eksotis.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Bagian Perawatan Sederhana -->
+        <section id="perawatan" class="section">
+            <h3>Tips Perawatan Dasar</h3>
+            <ul class="tips-list">
+                <li>Gunakan wadah/akuarium yang cukup luas agar ikan bisa bergerak bebas.</li>
+                <li>Ganti air secara berkala (2-3 hari sekali) untuk menjaga kebersihan.</li>
+                <li>Beri pakan berkualitas seperti pelet khusus cupang atau jentik nyamuk secukupnya.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Pesona Ikan Cupang. Dibuat untuk Belajar Pemrograman Web.</p>
+    </footer>
+
+    <!-- MODAL LOGIN EMAIL -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h3>Login dengan Email</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Alamat Email:</label>
+                    <input type="email" id="email" placeholder="nama@email.com" required>
                 </div>
-              </div>
-            </div>
-            <button type="submit" class="btn-primary btn-inline">Add Card Group[cite: 6]</button>
-          </form>
-        </section>
-
-        <!-- Card List Grid Sesuai PDF -->
-        <section class="card-grid-section">
-          <h3>Card Group[cite: 6]</h3>
-          <div class="cards-grid">
-            
-            <div class="task-card" style="border-top: 4px solid #F8BD00;">
-              <span class="card-category-tag">Academic Card[cite: 6]</span>
-              <h4>Nirmana[cite: 6]</h4>
-              <p>Membuat Nirmana 3D[cite: 6]</p>
-              <div class="card-meta">
-                <small>Due Date: 12 September 2026[cite: 6]</small>
-                <span class="status not-started">Not Started[cite: 6]</span>
-                <span class="priority important">Important[cite: 6]</span>
-              </div>
-            </div>
-
-            <div class="task-card" style="border-top: 4px solid #44b4ba;">
-              <span class="card-category-tag">Organization Card[cite: 6]</span>
-              <h4>Himapedia[cite: 6]</h4>
-              <p>Rapat Umum 3[cite: 6]</p>
-              <div class="card-meta">
-                <small>Due Date: 12 September 2026[cite: 6]</small>
-                <span class="status not-started">Not Started[cite: 6]</span>
-                <span class="priority important">Important[cite: 6]</span>
-              </div>
-            </div>
-
-            <div class="task-card" style="border-top: 4px solid #ff5757;">
-              <span class="card-category-tag">Community Card[cite: 6]</span>
-              <h4>Bandung Book Party[cite: 6]</h4>
-              <p>Rapat Umum 3[cite: 6]</p>
-              <div class="card-meta">
-                <small>Due Date: 12 September 2026[cite: 6]</small>
-                <span class="status not-started">Not Started[cite: 6]</span>
-                <span class="priority important">Important[cite: 6]</span>
-              </div>
-            </div>
-
-          </div>
-        </section>
-      </main>
+                <button type="submit" class="btn-primary full-width">Masuk</button>
+            </form>
+            <p id="login-message" class="login-msg"></p>
+        </div>
     </div>
 
+    <!-- Skrip JavaScript Sederhana untuk Modal -->
     <script>
-      function switchPage(pageId) {
-        document.querySelectorAll('.page-section').forEach(el => {
-          el.classList.remove('active-page');
-        });
-        document.getElementById('page-' + pageId).classList.add('active-page');
-        
-        if(pageId === 'dashboard') {
-          document.body.className = 'dashboard-body';
-        } else {
-          document.body.className = 'auth-body';
-        }
-        feather.replace();
-      }
+        const modal = document.getElementById('login-modal');
+        const btnLogin = document.getElementById('btn-login');
+        const spanClose = document.getElementById('close-modal');
+        const loginForm = document.getElementById('login-form');
+        const loginMessage = document.getElementById('login-message');
 
-      feather.replace();
+        // Buka modal saat tombol login diklik
+        btnLogin.onclick = function() {
+            modal.style.display = "flex";
+            loginMessage.textContent = "";
+            loginForm.reset();
+        }
+
+        // Tutup modal saat tombol silang (x) diklik
+        spanClose.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Tutup modal jika pengguna klik di luar kotak modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Simulasi submit form login
+        loginForm.onsubmit = function(e) {
+            e.preventDefault();
+            const emailVal = document.getElementById('email').value;
+            loginMessage.style.color = "green";
+            loginMessage.textContent = "Berhasil masuk dengan email: " + emailVal;
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 2000);
+        }
     </script>
-  </body>
+</body>
 </html>
